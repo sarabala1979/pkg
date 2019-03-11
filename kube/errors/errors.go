@@ -25,3 +25,16 @@ func IsRequestEntityTooLargeErr(err error) bool {
 	}
 	return false
 }
+
+func IsResourceExhaustedErr(err error) bool{
+	err = errors.Cause(err)
+	switch t := err.(type) {
+	case apierr.APIStatus:
+		if t.Status().Code == http.StatusInternalServerError && strings.Contains(t.Status().Message, "ResourceExhausted"){
+			return true
+		}
+	}
+	return false
+}
+
+
