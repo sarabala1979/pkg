@@ -1,11 +1,78 @@
+# Gopkg.toml example
+#
+# Refer to https://golang.github.io/dep/docs/Gopkg.toml.html
+# for detailed Gopkg.toml documentation.
+#
+# required = ["github.com/user/thing/cmd/thing"]
+# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
+#
+# [[constraint]]
+#   name = "github.com/user/project"
+#   version = "1.0.0"
+#
+# [[constraint]]
+#   name = "github.com/user/project2"
+#   branch = "dev"
+#   source = "github.com/myfork/project2"
+#
+# [[override]]
+#   name = "github.com/x/y"
+#   version = "2.4.0"
+#
+# [prune]
+#   non-go = false
+#   go-tests = true
+#   unused-packages = true
+
+
+[[constraint]]
+  name = "github.com/aws/aws-sdk-go"
+  version = "1.25.7"
+
+[[constraint]]
+  name = "github.com/dustin/go-humanize"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/minio/minio-go"
+  version = "6.0.25"
+
+[[constraint]]
+  name = "github.com/pkg/errors"
+  version = "0.8.1"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.4.2"
+
+[[constraint]]
+  name = "github.com/spf13/cobra"
+  version = "0.0.5"
+
+[[constraint]]
+  name = "github.com/stretchr/testify"
+  version = "1.4.0"
+
+[[constraint]]
+  branch = "release-1.16"
+  name = "k8s.io/cli-runtime"
+
 [[constraint]]
   name = "k8s.io/client-go"
-  branch = "release-11.0"
+  version= "v12.0.0"
 
-[[override]]
-  name = "k8s.io/apimachinery"
-  branch = "release-1.14"
+[[constraint]]
+  branch = "release-1.16"
+  name = "k8s.io/kubectl"
 
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "k8s.io/apimachinery"
+  branch = "release-1.16"
+
+[[constraint]]
+  name = "k8s.io/klog"
+  version = "v0.3.0"
